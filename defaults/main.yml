@@ -74,6 +74,7 @@ rhel_07_010040: true
 rhel_07_010050: true
 rhel_07_010060: true
 rhel_07_010061: true
+rhel_07_010062: true
 rhel_07_010070: true
 rhel_07_010081: true
 rhel_07_010082: true
@@ -286,6 +287,10 @@ rhel_07_040600: true
 # Whether or not to run tasks related to auditing/patching the desktop environment
 rhel7stig_gui: no
 
+# Whether to configure dconf rules unconditionally (ignoring presence of dconf
+# or rhel7stig_gui)
+rhel7stig_always_configure_dconf: no
+
 # RHEL-07-020250
 # This is a check for a "supported release"
 # These are the minimum supported releases.
@@ -354,6 +359,13 @@ rhel7stig_kdump_required: false
 # RHEL-07-040580
 # Set the SNMP community string to this from the default of public or private
 rhel7stig_snmp_community: Endgam3Ladyb0g
+
+# RHEL-07-010090 acceptable values: screen, tmux
+rhel7stig_screen_package: screen
+
+# whether to force role-specified packages to be installed regardless of the
+# presence of another compliant equivalent
+rhel7stig_force_exact_packages: "{{ rhel7stig_disruption_high }}"
 
 # RHEL-07-010480 and RHEL-07-010490
 # Password protect the boot loader
