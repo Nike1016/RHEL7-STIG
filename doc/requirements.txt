@@ -3,9 +3,10 @@
 # process, which may cause wedges in the gate later.
 
 # this is required for the docs build jobs
-sphinx>1.8
+sphinx>3.0.4
 sphinx_rtd_theme
 # doc8>=0.6.0 # Apache-2.0
 Jinja2
 PyYAML
 
+pygments>=2.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
